@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-blue
+  labels:
+    app: flask-blue
+spec:
+  selector:
+    matchLabels:
+      app: flask-blue
+      tier: web
+  template:
+    metadata:
+      labels:
+        app: flask-blue
+        tier: web
+    spec:
+      containers:
+      - name: flask-blue
+        image: stacksimplify/kubenginx:1.0.0
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 200m
