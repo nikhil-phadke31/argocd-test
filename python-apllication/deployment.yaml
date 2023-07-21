@@ -3,11 +3,11 @@ kind: Deployment
 metadata:
   name: flask-blue
   labels:
-    app: flask-blue
+    app: flask-blue-argocd
 spec:
   selector:
     matchLabels:
-      app: flask-blue
+      app: flask-blue-argocd
       tier: web
   template:
     metadata:
