@@ -5,7 +5,7 @@ metadata:
   annotations:
     cloud.google.com/neg: '{"exposed_ports": {"80":{"name": "flask-blue-service-80-neg"}}}'
   labels:
-    app: flask-blue
+    app: flask-blue-argocd
     tier: web
 spec:
   type: NodePort
@@ -13,5 +13,5 @@ spec:
   - port: 80
     targetPort: 80
   selector:
-    app: flask-blue
+    app: flask-blue-argocd
     tier: web
